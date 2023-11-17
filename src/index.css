@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  font-family: "Poppins";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: "#3F3B4A";
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.font-Inter {
+  font-family: "Inter";
+}
+
+/* .chow-text {
+  font-family: "Luckiest Guy";
+  -webkit-text-stroke-width: 5px; 
+  -webkit-text-stroke-color:  #FEB041; 
+} */
