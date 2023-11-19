@@ -23,7 +23,8 @@ const useStyles = makeStyles(() =>
         },
         joinBox: {
             backgroundColor: "#333333",
-            fontFamily: "Luckiest Guy"
+            fontFamily: "Luckiest Guy",
+            fontWeight: "400"
         },
         blueColor: {
             color: "#4CB699"
@@ -31,14 +32,17 @@ const useStyles = makeStyles(() =>
         footerText: {
             fontFamily: "Inter"
         },
-        joinText: {
-            lineHeight: "1 !important"
-        }
     }),
 );
 
 function WelcomePage() {
     const classes = useStyles();
+
+    let userAgentString =  navigator.userAgent; 
+    let chromeAgent = userAgentString.indexOf("Chrome") > -1;
+    let safariAgent = userAgentString.indexOf("Safari") > -1; 
+    if ((chromeAgent) && (safariAgent))
+         safariAgent = false;
 
     return (
         <div className='w-full'>
@@ -80,8 +84,13 @@ function WelcomePage() {
             <div className="w-full -mt-12 md:-mt-16 flex justify-center z-10">
                 <div className="w-full max-w-screen-xl flex flex-col items-center">
                     <div className={clsx(classes.descOutBox, "rounded-xl sm:rounded-2xl p-1 sm:p-1.5 md:p-2 z-20")}>
-                        <button className={clsx(classes.joinBox, "w-full rounded-lg sm:rounded-xl h-full text-white px-4 py-1.5 md:px-8 md:py-2 hover:bg-gray-200 hover:text-black hover:transition-all flex justify-center items-center")}>
-                            <p className={clsx(classes.joinText, "text-2xl md:text-4xl h-6 md:h-9")}>JOIN THE PRESALE</p>
+                        <button className={clsx(classes.joinBox, "w-full rounded-lg sm:rounded-xl text-white h-9 md:h-12 px-4 md:px-8 hover:bg-gray-200 hover:text-black hover:transition-all flex justify-center items-center")}>
+                            {
+                                safariAgent ?
+                                <p className={clsx(classes.joinText, "text-2xl md:text-4xl safari-join")}>JOIN THE PRESALE</p>:
+                                <p className={clsx(classes.joinText, "text-2xl md:text-4xl")}>JOIN THE PRESALE</p>
+                            }
+                            
                         </button>
                     </div>
                     <div className={clsx(classes.descOutBox, "w-full sm:w-5/6 max-w-3xl z-10 rounded-3xl p-2 sm:p-3 md:p-4 -mt-7 sm:-mt-8 md:-mt-10")}>
