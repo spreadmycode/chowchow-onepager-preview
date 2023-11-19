@@ -13,7 +13,9 @@ const useStyles = makeStyles(() =>
             maxHeight: "480px"
         },
         headState: {
-            color: "#F1CB9C"
+            "@media (min-width: 640px)": {
+                color: "#F1CB9C"    
+            }
         },
         descOutBox: {
             background: "linear-gradient(to bottom, #FEDF6F, #FEB041)",
@@ -28,6 +30,9 @@ const useStyles = makeStyles(() =>
         },
         footerText: {
             fontFamily: "Inter"
+        },
+        joinText: {
+            lineHeight: "1 !important"
         }
     }),
 );
@@ -43,21 +48,28 @@ function WelcomePage() {
                     <div className="relative">
                         <img src="/assets/imgs/chow_bg.svg" alt='' className="max-h-96 md:max-h-screen opacity-50 sm:opacity-100 md:w-1/2 z-0"></img>
                         <div className='absolute right-8 top-8'>
-                            <p className={clsx(classes.headState, "font-Inter text-xl font-bold")}>JOIN OUR COMMUNITY</p>
+                            <p className={clsx(classes.headState, "font-Inter text-xl font-bold text-white")}>JOIN OUR COMMUNITY</p>
                             <div className='flex justify-end mt-4'>
                                 <a href="https://twitter.com/chowchowdegen" target="_blank" rel="noreferrer">
-                                    <img className="w-6 h-6 sm:w-8 sm:h-8 mr-4" src="/assets/imgs/x_icon.svg" alt=""></img>
+                                    <img className="w-7 h-7 sm:w-8 sm:h-8 mr-4" src="/assets/imgs/x_icon.svg" alt=""></img>
                                 </a>
                                 <a href="https://t.me/chowchowofficialannouncements" target="_blank" rel="noreferrer">
-                                    <img className="w-6 h-6 sm:w-8 sm:h-8" src="/assets/imgs/tg_icon.svg" alt=""></img>
+                                    <img className="w-7 h-7 sm:w-8 sm:h-8" src="/assets/imgs/tg_icon.svg" alt=""></img>
                                 </a>
                             </div>
                         </div>
 
-                        <div className='absolute top-1/3 sm:top-20 md:top-24 lg:top-24 xl:top-32 right-28 sm:right-auto sm:left-1/2 -ml-20'>
-                            <img src="/assets/imgs/chow.svg" alt="" className="h-40 md:h-56 lg:h-72 xl:h-80"></img>
+                        <div className='hidden sm:block sm:absolute sm:top-24 lg:top-24 xl:top-32 sm:right-auto sm:left-1/2 -ml-24'>
+                            <img src="/assets/imgs/chow.svg" alt="" className="h-48 md:h-56 lg:h-72 xl:h-80"></img>
                             <div className='flex justify-end w-full'>
-                                <img src="/assets/imgs/$CHOW.svg" alt="" className="-mr-20 h-10 lg:h-16"></img>
+                                <img src="/assets/imgs/$CHOW.svg" alt="" className="-mr-10 h-10 lg:h-16"></img>
+                            </div>
+                        </div>
+
+                        <div className="absolute sm:hidden top-0 left-0 w-full h-full">
+                            <div className="flex justify-center items-center w-full h-full flex-col pt-10">
+                                <img src="/assets/imgs/chow.svg" alt="" className="h-40"></img>
+                                <img src="/assets/imgs/$CHOW.svg" alt="" className="ml-52 h-10"></img>
                             </div>
                         </div>
                     </div>
@@ -67,13 +79,13 @@ function WelcomePage() {
             {/* JOIN Description Section */}
             <div className="w-full -mt-12 md:-mt-16 flex justify-center z-10">
                 <div className="w-full max-w-screen-xl flex flex-col items-center">
-                    <div className={clsx(classes.descOutBox, "rounded-2xl p-2 z-20")}>
-                        <button className={clsx(classes.joinBox, "w-full rounded-xl h-full text-white text-2xl md:text-4xl px-3 py-1 md:px-8 md:py-2 hover:bg-gray-200 hover:text-black hover:transition-all flex justify-center items-center")}>
-                            JOIN THE PRESALE
+                    <div className={clsx(classes.descOutBox, "rounded-xl sm:rounded-2xl p-1 sm:p-1.5 md:p-2 z-20")}>
+                        <button className={clsx(classes.joinBox, "w-full rounded-lg sm:rounded-xl h-full text-white px-4 py-1.5 md:px-8 md:py-2 hover:bg-gray-200 hover:text-black hover:transition-all flex justify-center items-center")}>
+                            <p className={clsx(classes.joinText, "text-2xl md:text-4xl h-6 md:h-9")}>JOIN THE PRESALE</p>
                         </button>
                     </div>
-                    <div className={clsx(classes.descOutBox, "w-full sm:w-5/6 max-w-3xl z-10 rounded-3xl p-3 md:p-4 -mt-10")}>
-                        <div className="w-full rounded-2xl bg-white h-full px-10 pt-14 pb-10 md:px-16 md:pt-20 md:pb-16">
+                    <div className={clsx(classes.descOutBox, "w-full sm:w-5/6 max-w-3xl z-10 rounded-3xl p-2 sm:p-3 md:p-4 -mt-7 sm:-mt-8 md:-mt-10")}>
+                        <div className="w-full rounded-2xl bg-white h-full px-8 pt-10 pb-8 sm:px-10 sm:pt-14 sm:pb-10 md:px-16 md:pt-20 md:pb-16">
                             <p className={clsx(classes.blueColor, "text-xl md:text-2xl font-bold text-left")}>
                                 We're raising for a Chow Chow ($CHOW) liquidity pool, CEX listings and marketing! It’s the greatest Asian canine of all times. Full meme, no utility, degens only. Why not?
                             </p>
