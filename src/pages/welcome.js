@@ -38,11 +38,7 @@ const useStyles = makeStyles(() =>
 function WelcomePage() {
     const classes = useStyles();
 
-    let userAgentString =  navigator.userAgent; 
-    let chromeAgent = userAgentString.indexOf("Chrome") > -1;
-    let safariAgent = userAgentString.indexOf("Safari") > -1; 
-    if ((chromeAgent) && (safariAgent))
-         safariAgent = false;
+    const isWindows = navigator.platform.toUpperCase().indexOf('WIN') >= 0;
 
     return (
         <div className='w-full'>
@@ -63,8 +59,8 @@ function WelcomePage() {
                             </div>
                         </div>
 
-                        <div className='hidden sm:block sm:absolute sm:top-24 lg:top-24 xl:top-32 sm:right-auto sm:left-1/2 -ml-24'>
-                            <img src="/assets/imgs/chow.svg" alt="" className="h-48 md:h-56 lg:h-72 xl:h-80"></img>
+                        <div className='hidden sm:block sm:absolute sm:top-24 lg:top-32 sm:right-auto sm:left-1/2 lg:-mt-2 xl:mt-0 -ml-20 xl:-ml-24'>
+                            <img src="/assets/imgs/cc.png" alt="" className="h-48 md:h-56 lg:h-72 xl:h-80"></img>
                             <div className='flex justify-end w-full'>
                                 <img src="/assets/imgs/$CHOW.svg" alt="" className="-mr-10 h-10 lg:h-16"></img>
                             </div>
@@ -72,7 +68,7 @@ function WelcomePage() {
 
                         <div className="absolute sm:hidden top-0 left-0 w-full h-full">
                             <div className="flex justify-center items-center w-full h-full flex-col pt-10">
-                                <img src="/assets/imgs/chow.svg" alt="" className="h-40"></img>
+                                <img src="/assets/imgs/cc.png" alt="" className="h-40"></img>
                                 <img src="/assets/imgs/$CHOW.svg" alt="" className="ml-52 h-10"></img>
                             </div>
                         </div>
@@ -83,11 +79,11 @@ function WelcomePage() {
             {/* JOIN Description Section */}
             <div className="w-full -mt-12 md:-mt-16 flex justify-center z-10">
                 <div className="w-full max-w-screen-xl flex flex-col items-center">
-                    <div className={clsx(classes.descOutBox, "rounded-xl sm:rounded-2xl p-1 sm:p-1.5 md:p-2 z-20")}>
-                        <button className={clsx(classes.joinBox, "w-full rounded-lg sm:rounded-xl text-white h-9 md:h-12 px-4 md:px-8 hover:bg-gray-200 hover:text-black hover:transition-all flex justify-center items-center")}>
+                    <div className={clsx(classes.descOutBox, "rounded-xl sm:rounded-2xl p-1 sm:p-1.5 md:p-2 z-20 ")}>
+                        <button className={clsx(classes.joinBox, "w-full rounded-lg sm:rounded-xl text-white h-9 md:h-12 px-4 md:px-8 hover:bg-white hover:text-black hover:transition-all flex justify-center items-center")}>
                             {
-                                safariAgent ?
-                                <p className={clsx(classes.joinText, "text-2xl md:text-4xl safari-join")}>JOIN THE PRESALE</p>:
+                                !isWindows ?
+                                <p className={clsx(classes.joinText, "text-2xl md:text-4xl mac-join")}>JOIN THE PRESALE</p>:
                                 <p className={clsx(classes.joinText, "text-2xl md:text-4xl")}>JOIN THE PRESALE</p>
                             }
                             
@@ -121,7 +117,7 @@ function WelcomePage() {
             <div className="w-full flex flex-col items-center mb-16">
                 <div className="w-full flex justify-center">
                     <button>
-                        <img src="/assets/imgs/pinksale_icon.svg" className='w-40 md:w-72' alt=""></img>
+                        <img src="/assets/imgs/pinksale_icon.webp" className='w-40 md:w-72' alt=""></img>
                     </button>
                     <button>
                         <img src="/assets/imgs/ether_icon.svg" className='w-40 md:w-72' alt=""></img>
