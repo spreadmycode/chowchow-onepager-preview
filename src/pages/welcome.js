@@ -46,8 +46,8 @@ function WelcomePage() {
                         <button className="join-box w-full rounded-lg sm:rounded-xl text-white h-9 md:h-12 px-4 md:px-8 hover:bg-white hover:text-black hover:transition-all flex justify-center items-center">
                             {
                                 !isWindows ?
-                                <p className="joinText text-2xl md:text-4xl mac-join">JOIN THE PRESALE</p>:
-                                <p className="joinText text-2xl md:text-4xl">JOIN THE PRESALE</p>
+                                <p className="text-2xl md:text-4xl mac-join">JOIN THE PRESALE</p>:
+                                <p className="text-2xl md:text-4xl">JOIN THE PRESALE</p>
                             }
                             
                         </button>
