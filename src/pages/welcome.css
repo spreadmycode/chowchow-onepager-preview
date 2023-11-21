@@ -1,0 +1,37 @@
+.mac-join
+{
+    margin-top: 0.375rem;
+}
+@media only screen and (min-width: 768px) {
+  .mac-join
+  {
+      margin-top: 0.75rem;
+  }
+}
+
+.heading {
+  background: linear-gradient(180deg, #3F3B4A, #383345);
+  border-color: #FEDF6F;
+  border-style: Solid;
+}
+
+@media only screen and (min-width: 640px) {
+  .head-state {
+        color: #F1CB9C;
+  }
+}
+.description-out-box {
+  background: linear-gradient(to bottom, #FEDF6F, #FEB041);
+  color: #3F3B4A;
+}
+.join-box {
+  background-color: #333333;
+  font-family: Luckiest Guy;
+  font-weight: 400;
+}
+.blue-color {
+  color: #4CB699
+}
+.footer-text {
+  font-family: Inter;
+}
